@@ -1,0 +1,60 @@
+{
+    "manifestVersion": 1,
+    "id": "my-first-extension-pipelinemenu",
+    "publisher": "kgkkTester",
+    "version": "1.0.0",
+    "name": "Pipeline details view header button",
+    "description": "Pipeline details view header button",
+    "public": false,
+    "categories": ["Azure Repos"],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "pipelinesFolderContextMenuTestItem",
+            "type": "ms.vss-web.action",
+            "description": "Custom menu on a pipeline folder",
+            "targets": [
+                "ms.vss-build-web.pipelines-folder-menu"
+            ],
+            "properties": {
+                "text": "Test item",
+                "title": "ms.vss-code-web.source-item-menu",
+                "icon": "images/show-properties.png",
+                "group": "actions",
+                "uri": "main.html",
+                "registeredObjectId": "showProperties"
+            }
+        },
+        {
+            "id": "pipelinesHeaderTestButton",
+            "type": "ms.vss-web.action",
+            "description": "Custom button in the pipeline header",
+            "targets": [
+                "ms.vss-build-web.pipelines-header-menu"
+            ],
+            "properties": {
+                "text": "Test item",
+                "title": "ms.vss-code-web.source-item-menu",
+                "icon": "images/show-properties.png",
+                "group": "actions",
+                "uri": "main.html",
+                "registeredObjectId": "showProperties"
+            }
+        }
+],
+    "files": [
+        {
+            "path": "my-hub.html",
+            "addressable": true
+        },
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true,
+            "packagePath": "lib"
+        }
+    ]
+}
